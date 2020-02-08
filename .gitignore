@@ -32,13 +32,9 @@ project.xcworkspace
 # Buck
 .buckd
 buck-out
-/ReactAndroid/src/main/jni/prebuilt/lib/
+/ReactAndroid/src/main/jni/prebuilt/lib/armeabi-v7a/
+/ReactAndroid/src/main/jni/prebuilt/lib/x86/
 /ReactAndroid/src/main/gen
-
-# Android Studio
-.project
-.settings
-.classpath
 
 # Watchman
 .watchmanconfig
@@ -48,15 +44,17 @@ buck-out
 .gradle
 local.properties
 *.iml
-
+/android/build
+/android/app/build
+/android/app/qa
+/android/app/prod
 
 # Node
 node_modules
 *.log
 .nvm
 /bots/node_modules/
-package-lock.json
-
+ios/build/
 # OS X
 .DS_Store
 
@@ -74,26 +72,11 @@ package-lock.json
 /ReactCommon/**/*.xcodeproj
 RNTester/build
 
-# Libs that shouldn't have Xcode project
-/Libraries/FBLazyVector/**/*.xcodeproj
-/Libraries/FBReactNativeSpec/**/*.xcodeproj
-/Libraries/RCTRequired/**/*.xcodeproj
-/React/CoreModules/**/*.xcodeproj
-/packages/react-native-codegen/**/*.xcodeproj
+# Bundle artifact
+*.jsbundle
 
 # CocoaPods
-/template/ios/Pods/
-/template/ios/Podfile.lock
-/RNTester/Gemfile.lock
+/ios/Pods/
 
-# Ignore RNTester specific Pods, but keep the __offline_mirrors__ here.
-RNTester/Pods/*
-!RNTester/Pods/__offline_mirrors
-
-# react-native-codegen
-/ReactCommon/fabric/components/rncore/
-/schema-rncore.json
-
-# Visual studio
-.vscode
-.vs
+# App Version
+/components/AppVersion/currentVersion.js
