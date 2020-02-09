@@ -17,6 +17,7 @@ import {
   Text,
   StatusBar,
   Button,
+  Alert,
 } from 'react-native';
 
 import {
@@ -32,6 +33,21 @@ const App: () => React$Node = () => {
     NetInfo.fetch().then(state => {
       console.log('Connection type', state.type);
       console.log('Is connected?', state.isConnected);
+      if (state.isConnected) {
+        Alert.alert(
+          'Network Status',
+          'ONLINE',
+          [{text: 'OK', onPress: () => console.log('OK Pressed')}],
+          {cancelable: false},
+        );
+      } else {
+        Alert.alert(
+          'Network Status',
+          'OFFLINE',
+          [{text: 'OK', onPress: () => console.log('OK Pressed')}],
+          {cancelable: false},
+        );
+      }
     });
   };
   return (
